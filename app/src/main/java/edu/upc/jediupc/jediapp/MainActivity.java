@@ -3,6 +3,7 @@ package edu.upc.jediupc.jediapp;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -24,40 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private View.OnClickListener onNumberClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            int id = view.getId();
-            int num = -1;
-            switch (id) {
-                case R.id.b0:
-                    num = 0;
-                    break;
-                case R.id.b1:
-                    num = 1;
-                    break;
-                case R.id.b2:
-                    num = 2;
-                    break;
-                case R.id.b3:
-                    num = 3;
-                    break;
-                case R.id.b4:
-                    num = 4;
-                    break;
-                case R.id.b5:
-                    num = 5;
-                    break;
-                case R.id.b6:
-                    num = 6;
-                    break;
-                case R.id.b7:
-                    num = 7;
-                    break;
-                case R.id.b8:
-                    num = 8;
-                    break;
-                case R.id.b9:
-                    num = 9;
-                    break;
-            }
+            int num = Integer.parseInt(((Button) view).getText().toString());
             curr = curr * 10 + num;
             tv.setText(String.valueOf(curr));
         }
