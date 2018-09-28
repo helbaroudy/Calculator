@@ -14,13 +14,11 @@ public class MainActivity extends AppCompatActivity {
     private static final char OP_DIV = '/';
     private static final char NOP = '0';
 
-
     TextView tv;
 
     float curr = 0;
     float prev = 0;
     char op = NOP;
-
 
     private View.OnClickListener onNumberClickListener = new View.OnClickListener() {
         @Override
@@ -36,11 +34,6 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View view) {
             int id = view.getId();
-
-            if (id == R.id.beq) {
-                onEquals();
-                return;
-            }
 
             switch (id) {
                 case R.id.bplus:
@@ -88,7 +81,6 @@ public class MainActivity extends AppCompatActivity {
         prev = 0;
         op = NOP;
     }
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
