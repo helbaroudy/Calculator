@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
+
     private View.OnClickListener onOperationClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
@@ -112,10 +113,10 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.bminus).setOnClickListener(onOperationClickListener);
         findViewById(R.id.bmul).setOnClickListener(onOperationClickListener);
         findViewById(R.id.bdiv).setOnClickListener(onOperationClickListener);
-        findViewById(R.id.beq).setOnClickListener(onOperationClickListener);
-
-
     }
 
 
+    public void onEquals(View view) {
+        onEquals();
+    }
 }

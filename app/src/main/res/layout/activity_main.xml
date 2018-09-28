@@ -104,6 +104,7 @@
         android:layout_alignTop="@+id/bplus"
         android:layout_toEndOf="@+id/bdiv"
         android:text="="
+        android:onClick="onEquals"
         android:textSize="20sp" />
 
     <Button
