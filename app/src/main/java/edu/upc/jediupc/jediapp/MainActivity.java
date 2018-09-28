@@ -1,12 +1,9 @@
 package edu.upc.jediupc.jediapp;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     char op = NOP;
 
 
-    private View.OnClickListener listener = new View.OnClickListener() {
+    private View.OnClickListener onNumberClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
             int id = view.getId();
@@ -61,11 +58,15 @@ public class MainActivity extends AppCompatActivity {
                     num = 9;
                     break;
             }
-            if (num != -1) {
-                curr = curr * 10 + num;
-                tv.setText(String.valueOf(curr));
-                return;
-            }
+            curr = curr * 10 + num;
+            tv.setText(String.valueOf(curr));
+        }
+    };
+
+    private View.OnClickListener onOperationClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            int id = view.getId();
 
             if (id == R.id.beq) {
                 onEquals();
@@ -128,22 +129,22 @@ public class MainActivity extends AppCompatActivity {
 
         tv = findViewById(R.id.textView);
 
-        findViewById(R.id.b0).setOnClickListener(listener);
-        findViewById(R.id.b1).setOnClickListener(listener);
-        findViewById(R.id.b2).setOnClickListener(listener);
-        findViewById(R.id.b3).setOnClickListener(listener);
-        findViewById(R.id.b4).setOnClickListener(listener);
-        findViewById(R.id.b5).setOnClickListener(listener);
-        findViewById(R.id.b6).setOnClickListener(listener);
-        findViewById(R.id.b7).setOnClickListener(listener);
-        findViewById(R.id.b8).setOnClickListener(listener);
-        findViewById(R.id.b9).setOnClickListener(listener);
+        findViewById(R.id.b0).setOnClickListener(onNumberClickListener);
+        findViewById(R.id.b1).setOnClickListener(onNumberClickListener);
+        findViewById(R.id.b2).setOnClickListener(onNumberClickListener);
+        findViewById(R.id.b3).setOnClickListener(onNumberClickListener);
+        findViewById(R.id.b4).setOnClickListener(onNumberClickListener);
+        findViewById(R.id.b5).setOnClickListener(onNumberClickListener);
+        findViewById(R.id.b6).setOnClickListener(onNumberClickListener);
+        findViewById(R.id.b7).setOnClickListener(onNumberClickListener);
+        findViewById(R.id.b8).setOnClickListener(onNumberClickListener);
+        findViewById(R.id.b9).setOnClickListener(onNumberClickListener);
 
-        findViewById(R.id.bplus).setOnClickListener(listener);
-        findViewById(R.id.bminus).setOnClickListener(listener);
-        findViewById(R.id.bmul).setOnClickListener(listener);
-        findViewById(R.id.bdiv).setOnClickListener(listener);
-        findViewById(R.id.beq).setOnClickListener(listener);
+        findViewById(R.id.bplus).setOnClickListener(onOperationClickListener);
+        findViewById(R.id.bminus).setOnClickListener(onOperationClickListener);
+        findViewById(R.id.bmul).setOnClickListener(onOperationClickListener);
+        findViewById(R.id.bdiv).setOnClickListener(onOperationClickListener);
+        findViewById(R.id.beq).setOnClickListener(onOperationClickListener);
 
 
     }
